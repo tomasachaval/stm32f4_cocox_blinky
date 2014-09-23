@@ -33,25 +33,25 @@ void main() {
         led_off(LED2);
         __delay_ms(100);
 
-//        int i=0;
-//       if (0!=PORTAbits.RA5){
-//            int i=0;
-//            for( i=0;i<4;i++){
-//                led_on(i);
-//                __delay_ms(100);
-//                led_off(i);
-//                __delay_ms(100);
-//            }
-//        }else{
-//
-//           for(i=4;i<8;i++){
-//
-//                 led_on(i);
-//                __delay_ms(100);
-//                led_off(i);
-//                __delay_ms(100);
-//           }
-//       }
+        int i=0;
+       if (0!=PORTAbits.RA5){
+            int i=0;
+            for( i=0;i<4;i++){
+                led_on(i);
+                __delay_ms(100);
+                led_off(i);
+                __delay_ms(100);
+            }
+        }else{
+
+           for(i=4;i<8;i++){
+
+                 led_on(i);
+                __delay_ms(100);
+                led_off(i);
+                __delay_ms(100);
+           }
+       }
 
     }
 }
