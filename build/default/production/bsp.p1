@@ -1,17 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"5111 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18f8720.h
-[v _TRISJ `Vuc ~T0 @X0 0 e@3994 ]
-[s S105 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S105 . RJ0 RJ1 RJ2 RJ3 RJ4 RJ5 RJ6 RJ7 ]
-[s S106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S106 . ALE OE WRL WRH BA0 CE LB UB ]
-[u S104 `S105 1 `S106 1 ]
-[n S104 . . . ]
-"2209
-[v _PORTJbits `VS104 ~T0 @X0 0 e@3976 ]
-"144 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18.h
-[v __delay `(v ~T0 @X0 0 ef1`ul ]
-[p i __delay ]
+[s S44 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S44 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . T1OSO T1OSI CCP1 SCK SDI SDO TX RX ]
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . T13CKI CCP2 . SCL SDA . CK DT ]
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . CCP2A ]
+[s S48 :2 `uc 1 :1 `uc 1 ]
+[n S48 . . PA1 ]
+[s S49 :1 `uc 1 :1 `uc 1 ]
+[n S49 . . PA2 ]
+[u S43 `S44 1 `S45 1 `S46 1 `S47 1 `S48 1 `S49 1 ]
+[n S43 . . . . . . . ]
+"1037 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18f8720.h
+[v _PORTCbits `VS43 ~T0 @X0 0 e@3970 ]
 [; ;pic18f8720.h: 44: extern volatile unsigned char RCSTA2 @ 0xF6B;
 "46 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18f8720.h
 [; ;pic18f8720.h: 46: asm("RCSTA2 equ 0F6Bh");
@@ -4772,430 +4775,276 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;i2c_soft_library.h: 8: void start(void);
-[; ;i2c_soft_library.h: 9: void stop(void);
-[; ;i2c_soft_library.h: 10: uint8_t clock(void);
-[; ;i2c_soft_library.h: 11: uint8_t write(unsigned char byte);
-[; ;i2c_soft_library.h: 12: unsigned char read(uint8_t acknowledgment);
-[; ;i2c_soft_library.h: 13: uint8_t EEPROM_byte_write(unsigned char address, unsigned char byte);
-[; ;i2c_soft_library.h: 14: uint8_t EEPROM_sequential_read(unsigned char *block, unsigned char address,unsigned char size);
-[; ;i2c_soft_library.h: 15: uint8_t EEPROM_acknowledge_polling(void);
-[; ;i2c_soft_library.h: 16: void EEPROM_busy(void);
-[; ;i2c_soft_library.h: 17: void initialization(void);
-"16 i2c_soft_library.c
-[v _start `(v ~T0 @X0 1 ef ]
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: int rem;
+[; ;stdlib.h: 29: int quot;
+[; ;stdlib.h: 30: } div_t;
+[; ;stdlib.h: 31: typedef struct {
+[; ;stdlib.h: 32: unsigned rem;
+[; ;stdlib.h: 33: unsigned quot;
+[; ;stdlib.h: 34: } udiv_t;
+[; ;stdlib.h: 35: typedef struct {
+[; ;stdlib.h: 36: long quot;
+[; ;stdlib.h: 37: long rem;
+[; ;stdlib.h: 38: } ldiv_t;
+[; ;stdlib.h: 39: typedef struct {
+[; ;stdlib.h: 40: unsigned long quot;
+[; ;stdlib.h: 41: unsigned long rem;
+[; ;stdlib.h: 42: } uldiv_t;
+[; ;stdlib.h: 65: extern double atof(const char *);
+[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 67: extern int atoi(const char *);
+[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 69: extern long atol(const char *);
+[; ;stdlib.h: 70: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 72: extern int rand(void);
+[; ;stdlib.h: 73: extern void srand(unsigned int);
+[; ;stdlib.h: 74: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 75: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 76: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 77: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 78: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 79: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 80: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 81: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 82: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 87: extern void * malloc(size_t);
+[; ;stdlib.h: 88: extern void free(void *);
+[; ;stdlib.h: 89: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 91: extern void abort(void);
+[; ;stdlib.h: 92: extern void exit(int);
+[; ;stdlib.h: 93: extern int atexit(void (*)(void));
+[; ;stdlib.h: 94: extern char * getenv(const char *);
+[; ;stdlib.h: 95: extern char ** environ;
+[; ;stdlib.h: 96: extern int system(char *);
+[; ;stdlib.h: 97: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 98: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 99: extern int abs(int);
+[; ;stdlib.h: 100: extern long labs(long);
+[; ;stdlib.h: 103: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 104: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 109: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 110: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 112: extern char * ftoa(float f, int * status);
+[; ;bsp.h: 28: void led_on(int numeroLed);
+[; ;bsp.h: 29: void led_off(int numeroLed);
+"4 bsp.c
+[v _led_on `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;i2c_soft_library.c: 16: void start(void){
-[e :U _start ]
+[; ;bsp.c: 4: void led_on(int numeroLed){
+[e :U _led_on ]
+[v _numeroLed `i ~T0 @X0 1 r1 ]
 [f ]
-[; ;i2c_soft_library.c: 17: TRISJ=0x00;
-"17
-[e = _TRISJ -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 18: PORTJbits.RJ5 = PORTJbits.RJ6 = 1;
-"18
-[e = . . _PORTJbits 0 5 = . . _PORTJbits 0 6 -> -> 1 `i `uc ]
-[; ;i2c_soft_library.c: 19: PORTJbits.RJ5 = 0;
-"19
-[e = . . _PORTJbits 0 5 -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 20: _delay((unsigned long)((5)*(4000000/4000000.0)));
-"20
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-[; ;i2c_soft_library.c: 22: PORTJbits.RJ6 = 0;
-"22
-[e = . . _PORTJbits 0 6 -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 23: }
-"23
-[e :UE 497 ]
-}
-"27
-[v _stop `(v ~T0 @X0 1 ef ]
+[; ;bsp.c: 5: switch (numeroLed){
+"5
+[e $U 503  ]
 {
-[; ;i2c_soft_library.c: 27: void stop(void){
-[e :U _stop ]
-[f ]
-[; ;i2c_soft_library.c: 28: TRISJ=0x00;
-"28
-[e = _TRISJ -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 29: PORTJbits.RJ5 = 0;
-"29
-[e = . . _PORTJbits 0 5 -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 30: PORTJbits.RJ6 = 1;
-"30
-[e = . . _PORTJbits 0 6 -> -> 1 `i `uc ]
-"31
-[v _a `i ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 31: int a=5;
-[e = _a -> 5 `i ]
-[; ;i2c_soft_library.c: 32: _delay((unsigned long)((5)*(4000000/4000.0)));
-"32
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;i2c_soft_library.c: 33: PORTJbits.RJ5 = 1;
-"33
-[e = . . _PORTJbits 0 5 -> -> 1 `i `uc ]
-[; ;i2c_soft_library.c: 34: }
-"34
-[e :UE 498 ]
-}
-"39
-[v _clock `(uc ~T0 @X0 1 ef ]
-{
-[; ;i2c_soft_library.c: 39: uint8_t clock(void){
-[e :U _clock ]
-[f ]
-"40
-[v _level `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 40: uint8_t level;
-[; ;i2c_soft_library.c: 41: TRISJ=0x20;
-"41
-[e = _TRISJ -> -> 32 `i `uc ]
-[; ;i2c_soft_library.c: 42: PORTJbits.RJ6 = 1;
-"42
-[e = . . _PORTJbits 0 6 -> -> 1 `i `uc ]
-[; ;i2c_soft_library.c: 43: _delay((unsigned long)((1)*(4000000/4000.0)));
-"43
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;i2c_soft_library.c: 44: while(!PORTJbits.RJ6);
-"44
-[e $U 500  ]
-[e :U 501 ]
-[e :U 500 ]
-[e $ ! != -> . . _PORTJbits 0 6 `i -> -> -> 0 `i `Vuc `i 501  ]
-[e :U 502 ]
-[; ;i2c_soft_library.c: 45: _delay((unsigned long)((3)*(4000000/4000.0)));
-"45
-[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;i2c_soft_library.c: 46: level = PORTJbits.RJ5;
-"46
-[e = _level . . _PORTJbits 0 5 ]
-[; ;i2c_soft_library.c: 47: _delay((unsigned long)((2)*(4000000/4000000.0)));
-"47
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-[; ;i2c_soft_library.c: 49: PORTJbits.RJ6 = 0;
-"49
-[e = . . _PORTJbits 0 6 -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 50: return(level);
-"50
-[e ) _level ]
-[e $UE 499  ]
-[; ;i2c_soft_library.c: 51: }
-"51
-[e :UE 499 ]
-}
-"56
-[v _write `(uc ~T0 @X0 1 ef1`uc ]
-{
-[; ;i2c_soft_library.c: 56: uint8_t write(unsigned char byte){
-[e :U _write ]
-[v _byte `uc ~T0 @X0 1 r1 ]
-[f ]
-"57
-[v _mask `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 57: unsigned char mask = 0x80;
-[e = _mask -> -> 128 `i `uc ]
-[; ;i2c_soft_library.c: 58: TRISJ=0x00;
-"58
-[e = _TRISJ -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 59: while(mask){
-"59
-[e $U 504  ]
-[e :U 505 ]
-{
-[; ;i2c_soft_library.c: 60: if (byte & mask)
-"60
-[e $ ! != & -> _byte `i -> _mask `i -> 0 `i 507  ]
-[; ;i2c_soft_library.c: 61: PORTJbits.RJ5 = 1;
-"61
-[e = . . _PORTJbits 0 5 -> -> 1 `i `uc ]
-[e $U 508  ]
-"62
-[e :U 507 ]
-[; ;i2c_soft_library.c: 62: else
-[; ;i2c_soft_library.c: 63: PORTJbits.RJ5 = 0;
-"63
-[e = . . _PORTJbits 0 5 -> -> 0 `i `uc ]
-[e :U 508 ]
-[; ;i2c_soft_library.c: 64: clock();
-"64
-[e ( _clock ..  ]
-[; ;i2c_soft_library.c: 65: mask >>= 1;
-"65
-[e =>> _mask -> 1 `i ]
-"66
-}
+[; ;bsp.c: 6: case (0):
+"6
 [e :U 504 ]
-"59
-[e $ != -> _mask `i -> -> -> 0 `i `uc `i 505  ]
+[; ;bsp.c: 7: PORTCbits.RC1=0;
+"7
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+[; ;bsp.c: 8: break;
+"8
+[e $U 502  ]
+[; ;bsp.c: 9: case (1):
+"9
+[e :U 505 ]
+[; ;bsp.c: 10: PORTCbits.RC0=0;
+"10
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+[; ;bsp.c: 11: break;
+"11
+[e $U 502  ]
+[; ;bsp.c: 12: case (2):
+"12
 [e :U 506 ]
-[; ;i2c_soft_library.c: 66: }
-[; ;i2c_soft_library.c: 67: PORTJbits.RJ5 = 1;
-"67
-[e = . . _PORTJbits 0 5 -> -> 1 `i `uc ]
-[; ;i2c_soft_library.c: 68: return(clock());
-"68
-[e ) ( _clock ..  ]
-[e $UE 503  ]
-[; ;i2c_soft_library.c: 69: }
-"69
-[e :UE 503 ]
-}
-"75
-[v _read `(uc ~T0 @X0 1 ef1`uc ]
-{
-[; ;i2c_soft_library.c: 75: unsigned char read(uint8_t acknowledgment){
-[e :U _read ]
-[v _acknowledgment `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;i2c_soft_library.c: 76: TRISJ=0x60;
-"76
-[e = _TRISJ -> -> 96 `i `uc ]
-"77
-[v _mask `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 77: unsigned char mask = 0x80,
-[e = _mask -> -> 128 `i `uc ]
-"78
-[v _byte `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 78: byte = 0x00;
-[e = _byte -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 79: while(mask){
-"79
-[e $U 510  ]
-[e :U 511 ]
-{
-[; ;i2c_soft_library.c: 80: if (clock())
-"80
-[e $ ! != -> ( _clock ..  `i -> -> -> 0 `i `uc `i 513  ]
-[; ;i2c_soft_library.c: 81: byte |= mask;
-"81
-[e =| _byte _mask ]
-[e :U 513 ]
-[; ;i2c_soft_library.c: 82: mask >>= 1;
-"82
-[e =>> _mask -> 1 `i ]
-"83
-}
+[; ;bsp.c: 13: PORTCbits.RC6=0;
+"13
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;bsp.c: 14: break;
+"14
+[e $U 502  ]
+[; ;bsp.c: 15: case (3):
+"15
+[e :U 507 ]
+[; ;bsp.c: 16: PORTCbits.RC7=0;
+"16
+[e = . . _PORTCbits 0 7 -> -> 0 `i `uc ]
+[; ;bsp.c: 17: break;
+"17
+[e $U 502  ]
+[; ;bsp.c: 18: case (4):
+"18
+[e :U 508 ]
+[; ;bsp.c: 19: PORTCbits.RC2=0;
+"19
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+[; ;bsp.c: 20: break;
+"20
+[e $U 502  ]
+[; ;bsp.c: 21: case (5):
+"21
+[e :U 509 ]
+[; ;bsp.c: 22: PORTCbits.RC3=0;
+"22
+[e = . . _PORTCbits 0 3 -> -> 0 `i `uc ]
+[; ;bsp.c: 23: break;
+"23
+[e $U 502  ]
+[; ;bsp.c: 24: case (6):
+"24
 [e :U 510 ]
-"79
-[e $ != -> _mask `i -> -> -> 0 `i `uc `i 511  ]
+[; ;bsp.c: 25: PORTCbits.RC4=0;
+"25
+[e = . . _PORTCbits 0 4 -> -> 0 `i `uc ]
+[; ;bsp.c: 26: break;
+"26
+[e $U 502  ]
+[; ;bsp.c: 27: case (7):
+"27
+[e :U 511 ]
+[; ;bsp.c: 28: PORTCbits.RC5=0;
+"28
+[e = . . _PORTCbits 0 5 -> -> 0 `i `uc ]
+[; ;bsp.c: 29: break;
+"29
+[e $U 502  ]
+[; ;bsp.c: 30: default:
+"30
 [e :U 512 ]
-[; ;i2c_soft_library.c: 83: }
-[; ;i2c_soft_library.c: 84: if (acknowledgment){
-"84
-[e $ ! != -> _acknowledgment `i -> -> -> 0 `i `uc `i 514  ]
-{
-[; ;i2c_soft_library.c: 85: TRISJ=0x00;
-"85
-[e = _TRISJ -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 86: PORTJbits.RJ5 = 0;
-"86
-[e = . . _PORTJbits 0 5 -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 87: clock();
-"87
-[e ( _clock ..  ]
-[; ;i2c_soft_library.c: 88: TRISJ=0x00;
-"88
-[e = _TRISJ -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 89: PORTJbits.RJ5 = 1;
-"89
-[e = . . _PORTJbits 0 5 -> -> 1 `i `uc ]
-"90
+[; ;bsp.c: 31: break;
+"31
+[e $U 502  ]
+"32
 }
-[; ;i2c_soft_library.c: 90: }else{
+[; ;bsp.c: 32: }
+[e $U 502  ]
+"5
+[e :U 503 ]
+[e [\ _numeroLed , $ -> 0 `i 504
+ , $ -> 1 `i 505
+ , $ -> 2 `i 506
+ , $ -> 3 `i 507
+ , $ -> 4 `i 508
+ , $ -> 5 `i 509
+ , $ -> 6 `i 510
+ , $ -> 7 `i 511
+ 512 ]
+"32
+[e :U 502 ]
+[; ;bsp.c: 33: }
+"33
+[e :UE 501 ]
+}
+"34
+[v _led_off `(v ~T0 @X0 1 ef1`i ]
+{
+[; ;bsp.c: 34: void led_off(int numeroLed){
+[e :U _led_off ]
+[v _numeroLed `i ~T0 @X0 1 r1 ]
+[f ]
+[; ;bsp.c: 35: switch (numeroLed){
+"35
 [e $U 515  ]
-[e :U 514 ]
 {
-[; ;i2c_soft_library.c: 91: PORTJbits.RJ5 = 1;
-"91
-[e = . . _PORTJbits 0 5 -> -> 1 `i `uc ]
-[; ;i2c_soft_library.c: 92: clock();
-"92
-[e ( _clock ..  ]
-"93
-}
-[e :U 515 ]
-[; ;i2c_soft_library.c: 93: }
-[; ;i2c_soft_library.c: 94: return(byte);
-"94
-[e ) _byte ]
-[e $UE 509  ]
-[; ;i2c_soft_library.c: 95: }
-"95
-[e :UE 509 ]
-}
-"98
-[v _EEPROM_byte_write `(uc ~T0 @X0 1 ef2`uc`uc ]
-{
-[; ;i2c_soft_library.c: 98: uint8_t EEPROM_byte_write(unsigned char address, unsigned char byte){
-[e :U _EEPROM_byte_write ]
-[v _address `uc ~T0 @X0 1 r1 ]
-[v _byte `uc ~T0 @X0 1 r2 ]
-[f ]
-"100
-[v _status `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 100: uint8_t status;
-[; ;i2c_soft_library.c: 101: status = 0;
-"101
-[e = _status -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 102: start();
-"102
-[e ( _start ..  ]
-[; ;i2c_soft_library.c: 103: if (!write(0xAE))
-"103
-[e $ ! ! != -> ( _write (1 -> -> 174 `i `uc `i -> -> -> 0 `i `uc `i 517  ]
-[; ;i2c_soft_library.c: 104: if (!write(address))
-"104
-[e $ ! ! != -> ( _write (1 _address `i -> -> -> 0 `i `uc `i 518  ]
-[; ;i2c_soft_library.c: 105: if (!write(byte))
-"105
-[e $ ! ! != -> ( _write (1 _byte `i -> -> -> 0 `i `uc `i 519  ]
-[; ;i2c_soft_library.c: 106: status = 1;
-"106
-[e = _status -> -> 1 `i `uc ]
-[e :U 519 ]
-"107
-[e :U 518 ]
+[; ;bsp.c: 36: case (0):
+"36
+[e :U 516 ]
+[; ;bsp.c: 37: PORTCbits.RC1=1;
+"37
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+[; ;bsp.c: 38: break;
+"38
+[e $U 514  ]
+[; ;bsp.c: 39: case (1):
+"39
 [e :U 517 ]
-[; ;i2c_soft_library.c: 107: stop();
-[e ( _stop ..  ]
-[; ;i2c_soft_library.c: 108: return(status);
-"108
-[e ) _status ]
-[e $UE 516  ]
-[; ;i2c_soft_library.c: 109: }
-"109
-[e :UE 516 ]
-}
-"114
-[v _EEPROM_sequential_read `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
-{
-[; ;i2c_soft_library.c: 114: uint8_t EEPROM_sequential_read(unsigned char *block, unsigned char address,unsigned char size){
-[e :U _EEPROM_sequential_read ]
-[v _block `*uc ~T0 @X0 1 r1 ]
-[v _address `uc ~T0 @X0 1 r2 ]
-[v _size `uc ~T0 @X0 1 r3 ]
-[f ]
-"115
-[v _status `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 115: uint8_t status;
-[; ;i2c_soft_library.c: 116: status = 0;
-"116
-[e = _status -> -> 0 `i `uc ]
-[; ;i2c_soft_library.c: 117: start();
-"117
-[e ( _start ..  ]
-[; ;i2c_soft_library.c: 118: if (!write(0xAE))
-"118
-[e $ ! ! != -> ( _write (1 -> -> 174 `i `uc `i -> -> -> 0 `i `uc `i 521  ]
-[; ;i2c_soft_library.c: 119: if (!write(address)){
-"119
-[e $ ! ! != -> ( _write (1 _address `i -> -> -> 0 `i `uc `i 522  ]
-{
-[; ;i2c_soft_library.c: 120: start();
-"120
-[e ( _start ..  ]
-[; ;i2c_soft_library.c: 121: if (!write(0xAE | 0x01)){
-"121
-[e $ ! ! != -> ( _write (1 -> | -> 174 `i -> 1 `i `uc `i -> -> -> 0 `i `uc `i 523  ]
-{
-[; ;i2c_soft_library.c: 122: while(size--)
-"122
-[e $U 524  ]
-[e :U 525 ]
-[; ;i2c_soft_library.c: 123: *block++ = read(size ? 1 : 0);
-"123
-[e = *U ++ _block * -> -> 1 `i `x -> -> # *U _block `i `x ( _read (1 -> ? != -> _size `i -> -> -> 0 `i `uc `i : -> 1 `i -> 0 `i `uc ]
-[e :U 524 ]
-"122
-[e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 525  ]
-[e :U 526 ]
-[; ;i2c_soft_library.c: 124: status = 1;
-"124
-[e = _status -> -> 1 `i `uc ]
-"125
-}
-[e :U 523 ]
-"126
-}
-[e :U 522 ]
-"127
+[; ;bsp.c: 40: PORTCbits.RC0=1;
+"40
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;bsp.c: 41: break;
+"41
+[e $U 514  ]
+[; ;bsp.c: 42: case (2):
+"42
+[e :U 518 ]
+[; ;bsp.c: 43: PORTCbits.RC6=1;
+"43
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;bsp.c: 44: break;
+"44
+[e $U 514  ]
+[; ;bsp.c: 45: case (3):
+"45
+[e :U 519 ]
+[; ;bsp.c: 46: PORTCbits.RC7=1;
+"46
+[e = . . _PORTCbits 0 7 -> -> 1 `i `uc ]
+[; ;bsp.c: 47: break;
+"47
+[e $U 514  ]
+[; ;bsp.c: 48: case (4):
+"48
+[e :U 520 ]
+[; ;bsp.c: 49: PORTCbits.RC2=1;
+"49
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;bsp.c: 50: break;
+"50
+[e $U 514  ]
+[; ;bsp.c: 51: case (5):
+"51
 [e :U 521 ]
-[; ;i2c_soft_library.c: 125: }
-[; ;i2c_soft_library.c: 126: }
-[; ;i2c_soft_library.c: 127: stop();
-[e ( _stop ..  ]
-[; ;i2c_soft_library.c: 128: return(status);
-"128
-[e ) _status ]
-[e $UE 520  ]
-[; ;i2c_soft_library.c: 129: }
-"129
-[e :UE 520 ]
+[; ;bsp.c: 52: PORTCbits.RC3=1;
+"52
+[e = . . _PORTCbits 0 3 -> -> 1 `i `uc ]
+[; ;bsp.c: 53: break;
+"53
+[e $U 514  ]
+[; ;bsp.c: 54: case (6):
+"54
+[e :U 522 ]
+[; ;bsp.c: 55: PORTCbits.RC4=1;
+"55
+[e = . . _PORTCbits 0 4 -> -> 1 `i `uc ]
+[; ;bsp.c: 56: break;
+"56
+[e $U 514  ]
+[; ;bsp.c: 57: case (7):
+"57
+[e :U 523 ]
+[; ;bsp.c: 58: PORTCbits.RC5=1;
+"58
+[e = . . _PORTCbits 0 5 -> -> 1 `i `uc ]
+[; ;bsp.c: 59: break;
+"59
+[e $U 514  ]
+[; ;bsp.c: 60: default:
+"60
+[e :U 524 ]
+[; ;bsp.c: 61: break;
+"61
+[e $U 514  ]
+"62
 }
-"131
-[v _EEPROM_acknowledge_polling `(uc ~T0 @X0 1 ef ]
-{
-[; ;i2c_soft_library.c: 131: uint8_t EEPROM_acknowledge_polling(void){
-[e :U _EEPROM_acknowledge_polling ]
-[f ]
-"132
-[v _status `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 132: uint8_t status;
-[; ;i2c_soft_library.c: 133: start();
-"133
-[e ( _start ..  ]
-[; ;i2c_soft_library.c: 134: status = write(0xAE);
-"134
-[e = _status ( _write (1 -> -> 174 `i `uc ]
-[; ;i2c_soft_library.c: 135: stop();
-"135
-[e ( _stop ..  ]
-[; ;i2c_soft_library.c: 136: return(status);
-"136
-[e ) _status ]
-[e $UE 527  ]
-[; ;i2c_soft_library.c: 137: }
-"137
-[e :UE 527 ]
-}
-"139
-[v _EEPROM_busy `(v ~T0 @X0 1 ef ]
-{
-[; ;i2c_soft_library.c: 139: void EEPROM_busy(void){
-[e :U _EEPROM_busy ]
-[f ]
-[; ;i2c_soft_library.c: 140: while(EEPROM_acknowledge_polling())
-"140
-[e $U 529  ]
-[e :U 530 ]
-[; ;i2c_soft_library.c: 141: _delay((unsigned long)((1)*(4000000/4000.0)));
-"141
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[e :U 529 ]
-"140
-[e $ != -> ( _EEPROM_acknowledge_polling ..  `i -> -> -> 0 `i `uc `i 530  ]
-[e :U 531 ]
-[; ;i2c_soft_library.c: 142: }
-"142
-[e :UE 528 ]
-}
-"151
-[v _t1_setp `f ~T0 @X0 1 e ]
-"152
-[v _t2_setp `f ~T0 @X0 1 e ]
-[; ;i2c_soft_library.c: 151: float t1_setp,
-[; ;i2c_soft_library.c: 152: t2_setp;
-"157
-[v _initialization `(v ~T0 @X0 1 ef ]
-{
-[; ;i2c_soft_library.c: 157: void initialization(void){
-[e :U _initialization ]
-[f ]
-[; ;i2c_soft_library.c: 158: EEPROM_sequential_read(&t1_setp,0,4);
-"158
-[e ( _EEPROM_sequential_read (3 , , -> &U _t1_setp `*uc -> -> 0 `i `uc -> -> 4 `i `uc ]
-[; ;i2c_soft_library.c: 159: EEPROM_sequential_read(&t2_setp,4,4);
-"159
-[e ( _EEPROM_sequential_read (3 , , -> &U _t2_setp `*uc -> -> 4 `i `uc -> -> 4 `i `uc ]
-[; ;i2c_soft_library.c: 160: }
-"160
-[e :UE 532 ]
+[; ;bsp.c: 62: }
+[e $U 514  ]
+"35
+[e :U 515 ]
+[e [\ _numeroLed , $ -> 0 `i 516
+ , $ -> 1 `i 517
+ , $ -> 2 `i 518
+ , $ -> 3 `i 519
+ , $ -> 4 `i 520
+ , $ -> 5 `i 521
+ , $ -> 6 `i 522
+ , $ -> 7 `i 523
+ 524 ]
+"62
+[e :U 514 ]
+[; ;bsp.c: 63: }
+"63
+[e :UE 513 ]
 }

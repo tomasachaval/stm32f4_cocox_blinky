@@ -10,7 +10,6 @@
 #include <stdint.h>
 #include <plib.h>
 //#include <pic18.h>
-//#include "i2c_soft_lib.h"
 #include "bsp.h"
 #include "config.h"
 #include "i2c_soft_library.h"

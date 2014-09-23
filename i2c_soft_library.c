@@ -14,6 +14,7 @@
 Issuing of START condition.
 ****************************************************/
 void start(void){
+    TRISJ=0x00; // PORTJ OUTPUT
     SDA = SCL = 1;
     SDA = 0;
      __delay_us(5);  /* it places NOP instruction */
@@ -24,6 +25,7 @@ void start(void){
 Issuing of STOP condition.
 ****************************************************/
 void stop(void){
+    TRISJ=0x00; //PUERTO J OUTPUT
     SDA = 0;
     SCL = 1;
     int a=5;
@@ -36,12 +38,14 @@ or acknowledgment bit.
 ****************************************************/
 uint8_t clock(void){
     uint8_t level; /* state of SDA line */
+    TRISJ=0x20;//SCL o RJ6 = OUTPUT, SDA o RJ5= INPUT
     SCL = 1;
      __delay_ms(1);  /* it places NOP instruction into executable code */
     while(!SCL); /* if a pulse was stretched */
      __delay_ms(3);  /* it places NOP instruction  :into executable code */
     level = SDA;
      __delay_us(2);  /* it places NOP instruction  into executable code */
+
     SCL = 0;
     return(level);
 }
@@ -51,6 +55,7 @@ bit first. The function returns acknowledgment bit.
 ****************************************************/
 uint8_t write(uchar byte){
     uchar mask = 0x80;
+    TRISJ=0x00;
     while(mask){
         if (byte & mask)
         SDA = 1;
@@ -68,6 +73,7 @@ bit first. The parameter indicates, whether to
 acknowledge (1) or not (0).
 ****************************************************/
 uchar read(uint8_t acknowledgment){
+    TRISJ=0x60;
     uchar mask = 0x80,
     byte = 0x00;
     while(mask){
@@ -76,8 +82,10 @@ uchar read(uint8_t acknowledgment){
         mask >>= 1; /* next bit to receive */
     }
     if (acknowledgment){
+        TRISJ=0x00;
         SDA = 0;
         clock();
+        TRISJ=0x00;
         SDA = 1;
     }else{
         SDA = 1;

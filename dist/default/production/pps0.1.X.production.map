@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\Tomas\AppData\Local\Temp\s17v8.obj \
+  C:\Users\Tomas\AppData\Local\Temp\s181s.obj \
   dist/default/production\pps0.1.X.production.obj 
 
 Object code version is 3.10
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Tomas\AppData\Local\Temp\s17v8.obj
+C:\Users\Tomas\AppData\Local\Temp\s181s.obj
                 end_init                              2        2        4        0       0
                 reset_vec                             0        0        2        0       0
                 idloc                            200000   200000        8   200000       0
@@ -167,6 +167,7 @@ _PORTCbits               (abs)        000F82
 _PORTJbits               (abs)        000F88
 _TRISA                   (abs)        000F92
 _TRISC                   (abs)        000F94
+_TRISJ                   (abs)        000F9A
 __CFG_BOR$OFF            (abs)        000000
 __CFG_BORV$25            (abs)        000000
 __CFG_CCP2MUX$OFF        (abs)        000000
@@ -382,7 +383,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 21 in file "main.c"
+		line 20 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

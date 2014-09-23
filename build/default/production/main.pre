@@ -6563,7 +6563,7 @@ uint8_t EEPROM_acknowledge_polling(void);
 void EEPROM_busy(void);
 void initialization(void);
 
-# 21 "main.c"
+# 20 "main.c"
 void main() {
 
 ADCON1=0x0F;
@@ -6580,7 +6580,7 @@ _delay((unsigned long)((100)*(4000000/4000.0)));
 led_off(2);
 _delay((unsigned long)((100)*(4000000/4000.0)));
 
-# 57
+# 56
 }
 }
 

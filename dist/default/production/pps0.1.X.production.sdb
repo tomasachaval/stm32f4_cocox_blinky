@@ -2,7 +2,7 @@
 [d version 1.1 ]
 [d edition pro ]
 [d chip 18F8720 ]
-"58 main.c
+"57 main.c
 [s S40 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
@@ -40,8 +40,8 @@
 `uc 1 PA2 1 0 :1:1 
 ]
 [u S76 . 1 `S40 1 . 1 0 `S49 1 . 1 0 `S58 1 . 1 0 `S67 1 . 1 0 `S70 1 . 1 0 `S73 1 . 1 0 ]
-"63 bsp.c
-[s S132 . 1 `uc 1 RJ0 1 0 :1:0 
+"5111 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18f8720.h
+[s S133 . 1 `uc 1 RJ0 1 0 :1:0 
 `uc 1 RJ1 1 0 :1:1 
 `uc 1 RJ2 1 0 :1:2 
 `uc 1 RJ3 1 0 :1:3 
@@ -50,7 +50,7 @@
 `uc 1 RJ6 1 0 :1:6 
 `uc 1 RJ7 1 0 :1:7 
 ]
-[s S141 . 1 `uc 1 ALE 1 0 :1:0 
+[s S142 . 1 `uc 1 ALE 1 0 :1:0 
 `uc 1 OE 1 0 :1:1 
 `uc 1 WRL 1 0 :1:2 
 `uc 1 WRH 1 0 :1:3 
@@ -59,7 +59,7 @@
 `uc 1 LB 1 0 :1:6 
 `uc 1 UB 1 0 :1:7 
 ]
-[u S150 . 1 `S132 1 . 1 0 `S141 1 . 1 0 ]
+[u S151 . 1 `S133 1 . 1 0 `S142 1 . 1 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\abdiv.c
 [v ___abdiv `(c  1 e 1 0 ]
 "5 ../common/asfladd.c
@@ -188,25 +188,25 @@
 [v ___wmul `(ui  1 e 2 0 ]
 "16 i2c_soft_library.c
 [v _start `(v  1 e 0 0 ]
-"26
+"27
 [v _stop `(v  1 e 0 0 ]
-"37
+"39
 [v _clock `(uc  1 e 1 0 ]
-"52
+"56
 [v _write `(uc  1 e 1 0 ]
-"70
+"75
 [v _read `(uc  1 e 1 0 ]
-"90
+"98
 [v _EEPROM_byte_write `(uc  1 e 1 0 ]
-"106
+"114
 [v _EEPROM_sequential_read `(uc  1 e 1 0 ]
-"123
-[v _EEPROM_acknowledge_polling `(uc  1 e 1 0 ]
 "131
+[v _EEPROM_acknowledge_polling `(uc  1 e 1 0 ]
+"139
 [v _EEPROM_busy `(v  1 e 0 0 ]
-"149
+"157
 [v _initialization `(v  1 e 0 0 ]
-"21 main.c
+"20 main.c
 [v _main `(v  1 e 0 0 ]
 [s S40 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
@@ -247,7 +247,7 @@
 ]
 [u S76 . 1 `S40 1 . 1 0 `S49 1 . 1 0 `S58 1 . 1 0 `S67 1 . 1 0 `S70 1 . 1 0 `S73 1 . 1 0 ]
 [v _PORTCbits `VES76  1 e 1 @3970 ]
-[s S132 . 1 `uc 1 RJ0 1 0 :1:0 
+[s S133 . 1 `uc 1 RJ0 1 0 :1:0 
 `uc 1 RJ1 1 0 :1:1 
 `uc 1 RJ2 1 0 :1:2 
 `uc 1 RJ3 1 0 :1:3 
@@ -257,7 +257,7 @@
 `uc 1 RJ7 1 0 :1:7 
 ]
 "2209
-[s S141 . 1 `uc 1 ALE 1 0 :1:0 
+[s S142 . 1 `uc 1 ALE 1 0 :1:0 
 `uc 1 OE 1 0 :1:1 
 `uc 1 WRL 1 0 :1:2 
 `uc 1 WRH 1 0 :1:3 
@@ -266,22 +266,24 @@
 `uc 1 LB 1 0 :1:6 
 `uc 1 UB 1 0 :1:7 
 ]
-[u S150 . 1 `S132 1 . 1 0 `S141 1 . 1 0 ]
-[v _PORTJbits `VES150  1 e 1 @3976 ]
+[u S151 . 1 `S133 1 . 1 0 `S142 1 . 1 0 ]
+[v _PORTJbits `VES151  1 e 1 @3976 ]
 "3439
 [v _TRISA `VEuc  1 e 1 @3986 ]
 "3857
 [v _TRISC `VEuc  1 e 1 @3988 ]
+"5111
+[v _TRISJ `VEuc  1 e 1 @3994 ]
 "7503
 [v _ADCON1 `VEuc  1 e 1 @4033 ]
-"143 i2c_soft_library.c
+"151 i2c_soft_library.c
 [v _t1_setp `f  1 e 3 0 ]
-"144
+"152
 [v _t2_setp `f  1 e 3 0 ]
-"21 main.c
+"20 main.c
 [v _main `(v  1 e 0 0 ]
 {
-"58
+"57
 } 0
 "4 bsp.c
 [v _led_on `(v  1 e 0 0 ]
