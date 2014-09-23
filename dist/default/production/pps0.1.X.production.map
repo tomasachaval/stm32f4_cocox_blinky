@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\Tomas\AppData\Local\Temp\s1k8g.obj \
+  C:\Users\Tomas\AppData\Local\Temp\s1or4.obj \
   dist/default/production\pps0.1.X.production.obj 
 
 Object code version is 3.10
@@ -35,7 +35,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Tomas\AppData\Local\Temp\s1k8g.obj
+C:\Users\Tomas\AppData\Local\Temp\s1or4.obj
                 end_init                              2        2        4        0       0
                 reset_vec                             0        0        2        0       0
                 idloc                            200000   200000        8   200000       0
