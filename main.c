@@ -28,10 +28,10 @@ void main() {
     while(1)
     {
 
-        led_on(LED2);
-        __delay_ms(100);
-        led_off(LED2);
-        __delay_ms(100);
+//        led_on(LED2);
+//        __delay_ms(100);
+//        led_off(LED2);
+//        __delay_ms(100);
 
         int i=0;
        if (0!=PORTAbits.RA5){
@@ -43,8 +43,8 @@ void main() {
                 __delay_ms(100);
             }
         }else{
-
-           for(i=4;i<8;i++){
+           int i=0;
+           for(i=4;i<=7;i++){
 
                  led_on(i);
                 __delay_ms(100);

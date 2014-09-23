@@ -4,7 +4,7 @@
 #include "i2c_soft_library.h"
 
 
-#define uchar unsigned char
+#define uchar unsigned char // 8bit
 #define SDA PORTJbits.RJ5 /* microcontroller's I/O lines */
 #define SCL PORTJbits.RJ6 /* assigned to I2C lines */
 
@@ -53,8 +53,8 @@ uint8_t clock(void){
 Writing a byte to a slave, with most significant
 bit first. The function returns acknowledgment bit.
 ****************************************************/
-uint8_t write(uchar byte){
-    uchar mask = 0x80;
+uint8_t write(uint8_t byte){
+    uint8_t mask = 0x80;
     TRISJ=0x00;
     while(mask){
         if (byte & mask)
@@ -72,9 +72,9 @@ Reading byte from a slave, with most significant
 bit first. The parameter indicates, whether to
 acknowledge (1) or not (0).
 ****************************************************/
-uchar read(uint8_t acknowledgment){
+uint8_t read(uint8_t acknowledgment){
     TRISJ=0x60;
-    uchar mask = 0x80,
+    uint8_t mask = 0x80,
     byte = 0x00;
     while(mask){
         if (clock())
@@ -95,7 +95,7 @@ uchar read(uint8_t acknowledgment){
 }
 
 #define EEPROM 0xAE       /* slave address, data direction bit = 0 */
-uint8_t EEPROM_byte_write(uchar address, uchar byte){ //direccion de slave y byte a escribir
+uint8_t EEPROM_byte_write(uint8_t address, uint8_t byte){ //direccion de slave y byte a escribir
 
     uint8_t status;
     status = 0;             /* failure by default */
@@ -111,7 +111,7 @@ uint8_t EEPROM_byte_write(uchar address, uchar byte){ //direccion de slave y byt
 #define NO_ACK 0
 #define ACK    1
 
-uint8_t EEPROM_sequential_read(uchar *block, uchar address,uchar size){//direccion inicial, direccion slave, tamano dato a leer
+uint8_t EEPROM_sequential_read(uint8_t *block, uint8_t address,uint8_t size){//direccion inicial, direccion slave, tamano dato a leer
     uint8_t status;
     status = 0;                    /* failure by default */
     start();
