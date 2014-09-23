@@ -6511,6 +6511,7 @@ if (!write(0xAE))
 if (!write(address)){
 start();
 if (!write(0xAE | 0x01)){
+
 TRISJ = 0x60;
 while(size--)
 *block++ = read(size ? 1 : 0);
@@ -6534,11 +6535,11 @@ while(EEPROM_acknowledge_polling())
 _delay((unsigned long)((1)*(4000000/4000.0)));
 }
 
-# 152
+# 153
 float t1_setp,
 t2_setp;
 
-# 158
+# 159
 void initialization(void){
 EEPROM_sequential_read(&t1_setp,0,4);
 EEPROM_sequential_read(&t2_setp,4,4);

@@ -5096,109 +5096,109 @@ Version 3.2 HI-TECH Software Intermediate Code
 "121
 [e $ ! ! != -> ( _write (1 -> | -> 174 `i -> 1 `i `uc `i -> -> -> 0 `i `uc `i 523  ]
 {
-[; ;i2c_soft_library.c: 122: TRISJ = 0x60;
-"122
-[e = _TRISJ -> -> 96 `i `uc ]
-[; ;i2c_soft_library.c: 123: while(size--)
+[; ;i2c_soft_library.c: 123: TRISJ = 0x60;
 "123
+[e = _TRISJ -> -> 96 `i `uc ]
+[; ;i2c_soft_library.c: 124: while(size--)
+"124
 [e $U 524  ]
 [e :U 525 ]
-[; ;i2c_soft_library.c: 124: *block++ = read(size ? 1 : 0);
-"124
+[; ;i2c_soft_library.c: 125: *block++ = read(size ? 1 : 0);
+"125
 [e = *U ++ _block * -> -> 1 `i `x -> -> # *U _block `i `x ( _read (1 -> ? != -> _size `i -> -> -> 0 `i `uc `i : -> 1 `i -> 0 `i `uc ]
 [e :U 524 ]
-"123
+"124
 [e $ != -> -- _size -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 525  ]
 [e :U 526 ]
-[; ;i2c_soft_library.c: 125: status = 1;
-"125
-[e = _status -> -> 1 `i `uc ]
+[; ;i2c_soft_library.c: 126: status = 1;
 "126
-}
-[e :U 523 ]
+[e = _status -> -> 1 `i `uc ]
 "127
 }
-[e :U 522 ]
+[e :U 523 ]
 "128
-[e :U 521 ]
-[; ;i2c_soft_library.c: 126: }
-[; ;i2c_soft_library.c: 127: }
-[; ;i2c_soft_library.c: 128: stop();
-[e ( _stop ..  ]
-[; ;i2c_soft_library.c: 129: return(status);
+}
+[e :U 522 ]
 "129
+[e :U 521 ]
+[; ;i2c_soft_library.c: 127: }
+[; ;i2c_soft_library.c: 128: }
+[; ;i2c_soft_library.c: 129: stop();
+[e ( _stop ..  ]
+[; ;i2c_soft_library.c: 130: return(status);
+"130
 [e ) _status ]
 [e $UE 520  ]
-[; ;i2c_soft_library.c: 130: }
-"130
+[; ;i2c_soft_library.c: 131: }
+"131
 [e :UE 520 ]
 }
-"132
+"133
 [v _EEPROM_acknowledge_polling `(uc ~T0 @X0 1 ef ]
 {
-[; ;i2c_soft_library.c: 132: uint8_t EEPROM_acknowledge_polling(void){
+[; ;i2c_soft_library.c: 133: uint8_t EEPROM_acknowledge_polling(void){
 [e :U _EEPROM_acknowledge_polling ]
 [f ]
-"133
-[v _status `uc ~T0 @X0 1 a ]
-[; ;i2c_soft_library.c: 133: uint8_t status;
-[; ;i2c_soft_library.c: 134: start();
 "134
-[e ( _start ..  ]
-[; ;i2c_soft_library.c: 135: status = write(0xAE);
+[v _status `uc ~T0 @X0 1 a ]
+[; ;i2c_soft_library.c: 134: uint8_t status;
+[; ;i2c_soft_library.c: 135: start();
 "135
-[e = _status ( _write (1 -> -> 174 `i `uc ]
-[; ;i2c_soft_library.c: 136: stop();
+[e ( _start ..  ]
+[; ;i2c_soft_library.c: 136: status = write(0xAE);
 "136
-[e ( _stop ..  ]
-[; ;i2c_soft_library.c: 137: return(status);
+[e = _status ( _write (1 -> -> 174 `i `uc ]
+[; ;i2c_soft_library.c: 137: stop();
 "137
+[e ( _stop ..  ]
+[; ;i2c_soft_library.c: 138: return(status);
+"138
 [e ) _status ]
 [e $UE 527  ]
-[; ;i2c_soft_library.c: 138: }
-"138
+[; ;i2c_soft_library.c: 139: }
+"139
 [e :UE 527 ]
 }
-"140
+"141
 [v _EEPROM_busy `(v ~T0 @X0 1 ef ]
 {
-[; ;i2c_soft_library.c: 140: void EEPROM_busy(void){
+[; ;i2c_soft_library.c: 141: void EEPROM_busy(void){
 [e :U _EEPROM_busy ]
 [f ]
-[; ;i2c_soft_library.c: 141: while(EEPROM_acknowledge_polling())
-"141
+[; ;i2c_soft_library.c: 142: while(EEPROM_acknowledge_polling())
+"142
 [e $U 529  ]
 [e :U 530 ]
-[; ;i2c_soft_library.c: 142: _delay((unsigned long)((1)*(4000000/4000.0)));
-"142
+[; ;i2c_soft_library.c: 143: _delay((unsigned long)((1)*(4000000/4000.0)));
+"143
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 [e :U 529 ]
-"141
+"142
 [e $ != -> ( _EEPROM_acknowledge_polling ..  `i -> -> -> 0 `i `uc `i 530  ]
 [e :U 531 ]
-[; ;i2c_soft_library.c: 143: }
-"143
+[; ;i2c_soft_library.c: 144: }
+"144
 [e :UE 528 ]
 }
-"152
-[v _t1_setp `f ~T0 @X0 1 e ]
 "153
+[v _t1_setp `f ~T0 @X0 1 e ]
+"154
 [v _t2_setp `f ~T0 @X0 1 e ]
-[; ;i2c_soft_library.c: 152: float t1_setp,
-[; ;i2c_soft_library.c: 153: t2_setp;
-"158
+[; ;i2c_soft_library.c: 153: float t1_setp,
+[; ;i2c_soft_library.c: 154: t2_setp;
+"159
 [v _initialization `(v ~T0 @X0 1 ef ]
 {
-[; ;i2c_soft_library.c: 158: void initialization(void){
+[; ;i2c_soft_library.c: 159: void initialization(void){
 [e :U _initialization ]
 [f ]
-[; ;i2c_soft_library.c: 159: EEPROM_sequential_read(&t1_setp,0,4);
-"159
-[e ( _EEPROM_sequential_read (3 , , -> &U _t1_setp `*uc -> -> 0 `i `uc -> -> 4 `i `uc ]
-[; ;i2c_soft_library.c: 160: EEPROM_sequential_read(&t2_setp,4,4);
+[; ;i2c_soft_library.c: 160: EEPROM_sequential_read(&t1_setp,0,4);
 "160
-[e ( _EEPROM_sequential_read (3 , , -> &U _t2_setp `*uc -> -> 4 `i `uc -> -> 4 `i `uc ]
-[; ;i2c_soft_library.c: 161: }
+[e ( _EEPROM_sequential_read (3 , , -> &U _t1_setp `*uc -> -> 0 `i `uc -> -> 4 `i `uc ]
+[; ;i2c_soft_library.c: 161: EEPROM_sequential_read(&t2_setp,4,4);
 "161
+[e ( _EEPROM_sequential_read (3 , , -> &U _t2_setp `*uc -> -> 4 `i `uc -> -> 4 `i `uc ]
+[; ;i2c_soft_library.c: 162: }
+"162
 [e :UE 532 ]
 }

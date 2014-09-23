@@ -119,6 +119,7 @@ uint8_t EEPROM_sequential_read(uchar *block, uchar address,uchar size){//direcci
     if (!write(address)){         /* initial address    */
         start();
         if (!write(EEPROM | 0x01)){ /* read operation     */
+            //TRISJ = 0x60;
             TRISJ = 0x60;
             while(size--)
                 *block++ = read(size ? ACK : NO_ACK); // tomas no entiendo esta linea
