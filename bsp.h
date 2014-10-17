@@ -7,24 +7,44 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define led0 PORTCbits.RC1
-#define led1 PORTCbits.RC0
-#define led2 PORTCbits.RC6
-#define led3 PORTCbits.RC7
-#define led4 PORTCbits.RC2
-#define led5 PORTCbits.RC3
-#define led6 PORTCbits.RC4
-#define led7 PORTCbits.RC5
+#define led0 LATC1
+#define led1 LATC0
+#define led2 LATC6
+#define led3 LATC7
+#define led4 LATC2
+#define led5 LATC3
+#define led6 LATC4
+#define led7 LATC5
+/*ENTRADAS DEL SLOT DE LA IZQ*/
+#define INPUT0 PORTHbits.RH5
+#define INPUT1 PORTHbits.RH6
+#define INPUT2 PORTHbits.RH7
+#define INPUT3 PORTFbits.RF2
+#define INPUT4 PORTFbits.RF3
+#define INPUT5 PORTFbits.RF4
+#define INPUT6 PORTFbits.RF5
+#define INPUT7 PORTAbits.RA6
 
-#define LED0 0
-#define LED1 1
-#define LED2 2
-#define LED3 3
-#define LED4 4
-#define LED5 5
-#define LED6 6
-#define LED7 7
+/*ENTRADAS DEL SLOT DEL MEDIO*/
+#define INPUT8  PORTAbits.RA5
+#define INPUT9  PORTAbits.RA0
+#define INPUT10 PORTAbits.RA1
+#define INPUT11 PORTAbits.RA2
+#define INPUT12 PORTAbits.RA3
+#define INPUT13 PORTFbits.RF0
+#define INPUT14 PORTFbits.RF1
+#define INPUT15 PORTHbits.RH4
 
+
+
+
+
+
+
+
+
+
+void config (void);
 void led_on(int numeroLed);
 void led_off(int numeroLed);
 

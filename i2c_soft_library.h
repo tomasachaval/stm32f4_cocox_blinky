@@ -1,7 +1,7 @@
 #ifndef __i2c_h__
 #define __i2c_h__
 
-
+#define EEPROM 0x01      /* slave address, data direction bit = 0 */
 #include <stdint.h>
 #define uchar unsigned char
 

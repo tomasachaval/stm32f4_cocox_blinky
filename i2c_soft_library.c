@@ -94,7 +94,7 @@ uint8_t read(uint8_t acknowledgment){
     return(byte);
 }
 
-#define EEPROM 0xAE       /* slave address, data direction bit = 0 */
+// lo pongo al principio #define EEPROM 0xAE       /* slave address, data direction bit = 0 */
 uint8_t EEPROM_byte_write(uint8_t address, uint8_t byte){ //direccion de slave y byte a escribir
 
     uint8_t status;
@@ -143,20 +143,20 @@ void EEPROM_busy(void){
     __delay_ms (1);   /* about 1 msec */
 }
 
-/***************************************/
-#define T1_SETP_ADDR 0 /* starting locations of set point */
-#define T2_SETP_ADDR 4 /* values of temperatures */
-
-/****************************************************
-Global variables.
-****************************************************/
-float t1_setp, /* temperaturesí set points */
-t2_setp;
-
-/****************************************************
-Initialization of the system.
-****************************************************/
-void initialization(void){
-    EEPROM_sequential_read(&t1_setp,T1_SETP_ADDR,4);
-    EEPROM_sequential_read(&t2_setp,T2_SETP_ADDR,4);
-}
+///***************************************/
+//#define T1_SETP_ADDR 0 /* starting locations of set point */
+//#define T2_SETP_ADDR 4 /* values of temperatures */
+//
+///****************************************************
+//Global variables.
+//****************************************************/
+//float t1_setp, /* temperaturesí set points */
+//t2_setp;
+//
+///****************************************************
+//Initialization of the system.
+//****************************************************/
+//void initialization(void){
+//    EEPROM_sequential_read(&t1_setp,T1_SETP_ADDR,4);
+//    EEPROM_sequential_read(&t2_setp,T2_SETP_ADDR,4);
+//}

@@ -1,5 +1,12 @@
 #include "bsp.h"
 
+void config (void){
+    ADCON1=0x0F;// TODOS LOS PUERTOS DE A,H,F SON DIGITAL INPUT
+    TRISA=1; // PUERTO A ES INPUT
+    TRISH=1;
+    TRISF=1;
+    TRISC=0; // PUERTO C ES OUTPUT
+}
 
 void led_on(int numeroLed){
     switch (numeroLed){
@@ -60,4 +67,6 @@ void led_off(int numeroLed){
         default:
             break;
     }
+
+
 }
