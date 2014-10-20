@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
-
+#include "i2c_soft_library.h"
 /*SALIDAS CON LEDS DEL SLOT DE LA DERECHA*/
 #define led0 LATC1
 #define led1 LATC0

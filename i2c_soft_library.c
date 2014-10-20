@@ -3,13 +3,9 @@
 #include <stdio.h>
 #include "i2c_soft_library.h"
 
-
-#define uchar unsigned char // 8bit
+//#define uchar unsigned char // 8bit
 #define SDA PORTJbits.RJ5 /* microcontroller's I/O lines */
 #define SCL PORTJbits.RJ6 /* assigned to I2C lines */
-
-
-
 /****************************************************
 Issuing of START condition.
 ****************************************************/

@@ -8,7 +8,7 @@
 //#include <stdint.h>
 //#include <plib.h>
 //#include <pic18.h>
-//#include "i2c_soft_library.h"
+#include "i2c_soft_library.h"
 
 void main() {
     config();

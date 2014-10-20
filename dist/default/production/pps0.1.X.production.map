@@ -22,7 +22,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\Tomas\AppData\Local\Temp\s1k58.obj \
+  C:\Users\Tomas\AppData\Local\Temp\s22p4.obj \
   dist/default/production\pps0.1.X.production.obj 
 
 Object code version is 3.10
@@ -35,28 +35,28 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Tomas\AppData\Local\Temp\s1k58.obj
+C:\Users\Tomas\AppData\Local\Temp\s22p4.obj
                 end_init                              2        2        4        0       0
                 reset_vec                             0        0        2        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\pps0.1.X.production.obj
-                text3                             1FE6C    1FE6C       6E     FF36       0
-                text2                             1FEDA    1FEDA       6E     FF6D       0
-                text1                             1FE56    1FE56       16     FF2B       0
-                cstackCOMRAM                          1        1        7        1       1
-                cinit                             1FE50    1FE50        6     FF28       0
-                text0                             1FF48    1FF48       B8     FFA4       0
+                text3                             1FE16    1FE16       6E     FF0B       0
+                text2                             1FE84    1FE84       6E     FF42       0
+                text1                             1FE00    1FE00       16     FF00       0
+                cstackCOMRAM                          1        1        9        1       1
+                cinit                             1FDFA    1FDFA        6     FEFD       0
+                text0                             1FEF2    1FEF2      10E     FF79       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 end_init                              2        2        4         0
                 reset_vec                             0        0        2         0
-                text3                             1FE6C    1FE6C       6E         0
-                text2                             1FEDA    1FEDA       6E         0
-                text1                             1FE56    1FE56       16         0
-                cinit                             1FE50    1FE50        6         0
-                text0                             1FF48    1FF48       B8         0
+                text3                             1FE16    1FE16       6E         0
+                text2                             1FE84    1FE84       6E         0
+                text1                             1FE00    1FE00       16         0
+                cinit                             1FDFA    1FDFA        6         0
+                text0                             1FEF2    1FEF2      10E         0
 
         CLASS   CONST          
 
@@ -65,7 +65,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1        7         1
+                cstackCOMRAM                          1        1        9         1
 
         CLASS   ABS1           
 
@@ -120,12 +120,12 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000006  000006         0       0  CODE    
-                cstackCOMRAM                   000001  000007  000008         1       1  COMRAM  
-                cinit                          01FE50  000006  01FE56      FF28       0  CODE    
-                text1                          01FE56  000016  01FE6C      FF2B       0  CODE    
-                text3                          01FE6C  00006E  01FEDA      FF36       0  CODE    
-                text2                          01FEDA  00006E  01FF48      FF6D       0  CODE    
-                text0                          01FF48  0000B8  020000      FFA4       0  CODE    
+                cstackCOMRAM                   000001  000009  00000A         1       1  COMRAM  
+                cinit                          01FDFA  000006  01FE00      FEFD       0  CODE    
+                text1                          01FE00  000016  01FE16      FF00       0  CODE    
+                text3                          01FE16  00006E  01FE84      FF0B       0  CODE    
+                text2                          01FE84  00006E  01FEF2      FF42       0  CODE    
+                text0                          01FEF2  00010E  020000      FF79       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -148,16 +148,16 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           000008-000EFF              EF8
-        CODE             000006-01FE4F            1FE4A
-        COMRAM           000008-00005F               58
-        CONST            000006-01FE4F            1FE4A
+        BIGRAM           00000A-000EFF              EF6
+        CODE             000006-01FDF9            1FDF4
+        COMRAM           00000A-00005F               56
+        CONST            000006-01FDF9            1FDF4
         EEDATA           F00000-F003FF              400
         MEDIUMCONST      000F00-00FFFF             F100
-                         010F00-01FE4F             EF50
+                         010F00-01FDF9             EEFA
         RAM              000060-000EFF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000F00-01FE4F              100
+        SMALLCONST       000F00-01FDF9              100
 
                                   Symbol Table
 
@@ -172,6 +172,7 @@ _LATC4                   (abs)        007C5C
 _LATC5                   (abs)        007C5D
 _LATC6                   (abs)        007C5E
 _LATC7                   (abs)        007C5F
+_PORTAbits               (abs)        000F80
 _PORTJbits               (abs)        000F88
 _TRISA                   (abs)        000F92
 _TRISC                   (abs)        000F94
@@ -352,22 +353,22 @@ __Ltext2                 text2        000000
 __Ltext3                 text3        000000
 __Ltext4                 text4        000000
 __S0                     (abs)        30000E
-__S1                     (abs)        000008
+__S1                     (abs)        00000A
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000000
-__end_of__initialization cinit        01FE50
-__end_of_config          text1        01FE6C
-__end_of_led_off         text3        01FEDA
-__end_of_led_on          text2        01FF48
+__end_of__initialization cinit        01FDFA
+__end_of_config          text1        01FE16
+__end_of_led_off         text3        01FE84
+__end_of_led_on          text2        01FEF2
 __end_of_main            text0        020000
-__initialization         cinit        01FE50
+__initialization         cinit        01FDFA
 __mediumconst            mediumconst  000000
-__pcinit                 cinit        01FE50
+__pcinit                 cinit        01FDFA
 __pcstackCOMRAM          cstackCOMRAM 000001
-__ptext0                 text0        01FF48
-__ptext1                 text1        01FE56
-__ptext2                 text2        01FEDA
-__ptext3                 text3        01FE6C
+__ptext0                 text0        01FEF2
+__ptext1                 text1        01FE00
+__ptext2                 text2        01FE84
+__ptext3                 text3        01FE16
 __ptext4                 text4        000000
 __ramtop                 ramtop       000F00
 __size_of_config         (abs)        000000
@@ -375,11 +376,11 @@ __size_of_led_off        (abs)        000000
 __size_of_led_on         (abs)        000000
 __size_of_main           (abs)        000000
 __smallconst             smallconst   000000
-_config                  text1        01FE56
-_led_off                 text3        01FE6C
-_led_on                  text2        01FEDA
-_main                    text0        01FF48
-end_of_initialization    cinit        01FE50
+_config                  text1        01FE00
+_led_off                 text3        01FE16
+_led_on                  text2        01FE84
+_main                    text0        01FEF2
+end_of_initialization    cinit        01FDFA
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
@@ -387,18 +388,20 @@ intlevel3                text         000000
 led_off@numeroLed        cstackCOMRAM 000001
 led_on@numeroLed         cstackCOMRAM 000001
 main@i                   cstackCOMRAM 000006
+main@i_119               cstackCOMRAM 000008
 start                    init         000002
-start_initialization     cinit        01FE50
+start_initialization     cinit        01FDFA
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 20 in file "main.c"
+		line 13 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
+  i               2    7[COMRAM] int 
   i               2    5[COMRAM] int 
  Return value:  Size  Location     Type
 		None               void
@@ -410,10 +413,10 @@ FUNCTION INFORMATION:
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
+      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        5 bytes
  Hardware stack levels required when called:    1
  This function calls:
 		_config
@@ -516,19 +519,19 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 bsp.c
-		_led_off       		CODE           	1FE6C	0000	110
-		_config        		CODE           	1FE56	0000	22
-		_led_on        		CODE           	1FEDA	0000	110
+		_led_off       		CODE           	1FE16	0000	110
+		_config        		CODE           	1FE00	0000	22
+		_led_on        		CODE           	1FE84	0000	110
 
 bsp.c estimated size: 242
 
 shared
-		__initializatio		CODE           	1FE50	0000	0
+		__initializatio		CODE           	1FDFA	0000	0
 
 shared estimated size: 0
 
 main.c
-		_main          		CODE           	1FF48	0000	184
+		_main          		CODE           	1FEF2	0000	270
 
-main.c estimated size: 184
+main.c estimated size: 270
 
