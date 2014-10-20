@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+/*SALIDAS CON LEDS DEL SLOT DE LA DERECHA*/
 #define led0 LATC1
 #define led1 LATC0
 #define led2 LATC6
@@ -15,6 +16,7 @@
 #define led5 LATC3
 #define led6 LATC4
 #define led7 LATC5
+
 /*ENTRADAS DEL SLOT DE LA IZQ*/
 #define INPUT0 PORTHbits.RH5
 #define INPUT1 PORTHbits.RH6
@@ -34,15 +36,6 @@
 #define INPUT13 PORTFbits.RF0
 #define INPUT14 PORTFbits.RF1
 #define INPUT15 PORTHbits.RH4
-
-
-
-
-
-
-
-
-
 
 void config (void);
 void led_on(int numeroLed);
