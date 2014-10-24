@@ -37,6 +37,9 @@
 #define INPUT14 PORTFbits.RF1
 #define INPUT15 PORTHbits.RH4
 
+
+void all_led_off (void);
+void all_led_on (void);
 void config (void);
 void led_on(int numeroLed);
 void led_off(int numeroLed);

@@ -2,59 +2,6 @@
 [d version 1.1 ]
 [d edition pro ]
 [d chip 18F8720 ]
-"40 bsp.h
-[s S25 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-]
-[s S33 . 1 `uc 1 AN0 1 0 :1:0 
-`uc 1 AN1 1 0 :1:1 
-`uc 1 AN2 1 0 :1:2 
-`uc 1 AN3 1 0 :1:3 
-`uc 1 T0CKI 1 0 :1:4 
-`uc 1 AN4 1 0 :1:5 
-`uc 1 OSC2 1 0 :1:6 
-]
-[s S41 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 VREFM 1 0 :1:2 
-`uc 1 VREFP 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 LVDIN 1 0 :1:5 
-`uc 1 CLKO 1 0 :1:6 
-]
-[s S48 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RA7 1 0 :1:7 
-]
-[s S51 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RJPU 1 0 :1:7 
-]
-[s S54 . 1 `uc 1 ULPWUIN 1 0 :1:0 
-]
-[u S56 . 1 `S25 1 . 1 0 `S33 1 . 1 0 `S41 1 . 1 0 `S48 1 . 1 0 `S51 1 . 1 0 `S54 1 . 1 0 ]
-"5111 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18f8720.h
-[s S139 . 1 `uc 1 RJ0 1 0 :1:0 
-`uc 1 RJ1 1 0 :1:1 
-`uc 1 RJ2 1 0 :1:2 
-`uc 1 RJ3 1 0 :1:3 
-`uc 1 RJ4 1 0 :1:4 
-`uc 1 RJ5 1 0 :1:5 
-`uc 1 RJ6 1 0 :1:6 
-`uc 1 RJ7 1 0 :1:7 
-]
-[s S148 . 1 `uc 1 ALE 1 0 :1:0 
-`uc 1 OE 1 0 :1:1 
-`uc 1 WRL 1 0 :1:2 
-`uc 1 WRH 1 0 :1:3 
-`uc 1 BA0 1 0 :1:4 
-`uc 1 CE 1 0 :1:5 
-`uc 1 LB 1 0 :1:6 
-`uc 1 UB 1 0 :1:7 
-]
-[u S157 . 1 `S139 1 . 1 0 `S148 1 . 1 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\abdiv.c
 [v ___abdiv `(c  1 e 1 0 ]
 "5 ../common/asfladd.c
@@ -77,9 +24,13 @@
 [v ___aslmul `(ul  1 e 4 0 ]
 "3 bsp.c
 [v _config `(v  1 e 0 0 ]
-"11
+"12
+[v _all_led_off `(v  1 e 0 0 ]
+"18
+[v _all_led_on `(v  1 e 0 0 ]
+"25
 [v _led_on `(v  1 e 0 0 ]
-"41
+"55
 [v _led_off `(v  1 e 0 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\abmod.c
 [v ___abmod `(c  1 e 1 0 ]
@@ -183,82 +134,27 @@
 [v ___tmul `(um  1 e 3 0 ]
 "3 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\wmul.c
 [v ___wmul `(ui  1 e 2 0 ]
-"12 i2c_soft_library.c
+"17 i2c_soft_library.c
 [v _start `(v  1 e 0 0 ]
-"23
+"30
 [v _stop `(v  1 e 0 0 ]
-"35
+"43
 [v _clock `(uc  1 e 1 0 ]
-"52
+"62
 [v _write `(uc  1 e 1 0 ]
-"71
+"90
 [v _read `(uc  1 e 1 0 ]
-"94
+"114
 [v _EEPROM_byte_write `(uc  1 e 1 0 ]
-"110
+"133
 [v _EEPROM_sequential_read `(uc  1 e 1 0 ]
-"129
+"155
 [v _EEPROM_acknowledge_polling `(uc  1 e 1 0 ]
-"137
+"163
 [v _EEPROM_busy `(v  1 e 0 0 ]
 "13 main.c
 [v _main `(v  1 e 0 0 ]
-[s S25 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-]
-"722 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18f8720.h
-[s S33 . 1 `uc 1 AN0 1 0 :1:0 
-`uc 1 AN1 1 0 :1:1 
-`uc 1 AN2 1 0 :1:2 
-`uc 1 AN3 1 0 :1:3 
-`uc 1 T0CKI 1 0 :1:4 
-`uc 1 AN4 1 0 :1:5 
-`uc 1 OSC2 1 0 :1:6 
-]
-[s S41 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 VREFM 1 0 :1:2 
-`uc 1 VREFP 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 LVDIN 1 0 :1:5 
-`uc 1 CLKO 1 0 :1:6 
-]
-[s S48 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RA7 1 0 :1:7 
-]
-[s S51 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RJPU 1 0 :1:7 
-]
-[s S54 . 1 `uc 1 ULPWUIN 1 0 :1:0 
-]
-[u S56 . 1 `S25 1 . 1 0 `S33 1 . 1 0 `S41 1 . 1 0 `S48 1 . 1 0 `S51 1 . 1 0 `S54 1 . 1 0 ]
-[v _PORTAbits `VES56  1 e 1 @3968 ]
-[s S139 . 1 `uc 1 RJ0 1 0 :1:0 
-`uc 1 RJ1 1 0 :1:1 
-`uc 1 RJ2 1 0 :1:2 
-`uc 1 RJ3 1 0 :1:3 
-`uc 1 RJ4 1 0 :1:4 
-`uc 1 RJ5 1 0 :1:5 
-`uc 1 RJ6 1 0 :1:6 
-`uc 1 RJ7 1 0 :1:7 
-]
-"2209
-[s S148 . 1 `uc 1 ALE 1 0 :1:0 
-`uc 1 OE 1 0 :1:1 
-`uc 1 WRL 1 0 :1:2 
-`uc 1 WRH 1 0 :1:3 
-`uc 1 BA0 1 0 :1:4 
-`uc 1 CE 1 0 :1:5 
-`uc 1 LB 1 0 :1:6 
-`uc 1 UB 1 0 :1:7 
-]
-[u S157 . 1 `S139 1 . 1 0 `S148 1 . 1 0 ]
-[v _PORTJbits `VES157  1 e 1 @3976 ]
-"3439
+"3439 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic18f8720.h
 [v _TRISA `VEuc  1 e 1 @3986 ]
 "3857
 [v _TRISC `VEuc  1 e 1 @3988 ]
@@ -286,29 +182,59 @@
 [v _LATC6 `VEb  1 e 0 @31838 ]
 "10236
 [v _LATC7 `VEb  1 e 0 @31839 ]
+"10322
+[v _LATJ5 `VEb  1 e 0 @31885 ]
+"10324
+[v _LATJ6 `VEb  1 e 0 @31886 ]
+"10326
+[v _LATJ7 `VEb  1 e 0 @31887 ]
 "13 main.c
 [v _main `(v  1 e 0 0 ]
 {
-"19
-[v main@i_119 `i  1 a 2 7 ]
-"17
-[v main@i `i  1 a 2 5 ]
-"37
+"40
 } 0
 "3 bsp.c
 [v _config `(v  1 e 0 0 ]
 {
-"9
+"10
 } 0
-"11
+"25
 [v _led_on `(v  1 e 0 0 ]
 {
 [v led_on@numeroLed `i  1 p 2 0 ]
-"40
+"54
 } 0
-"41
+"17 i2c_soft_library.c
+[v _start `(v  1 e 0 0 ]
+{
+"25
+} 0
+"62
+[v _write `(uc  1 e 1 0 ]
+{
+"63
+[v write@mask `uc  1 a 1 4 ]
+"64
+[v write@i `uc  1 a 1 3 ]
+"62
+[v write@byte `uc  1 p 1 1 ]
+"83
+} 0
+"55 bsp.c
 [v _led_off `(v  1 e 0 0 ]
 {
 [v led_off@numeroLed `i  1 p 2 0 ]
-"72
+"86
+} 0
+"30 i2c_soft_library.c
+[v _stop `(v  1 e 0 0 ]
+{
+"37
+} 0
+"43
+[v _clock `(uc  1 e 1 0 ]
+{
+"44
+[v clock@level `uc  1 a 1 0 ]
+"56
 } 0

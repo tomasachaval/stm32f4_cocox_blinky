@@ -6,6 +6,20 @@ void config (void){
     TRISH=1;
     TRISF=1;
     TRISC=0; // PUERTO C ES OUTPUT
+
+}
+
+void all_led_off (void){
+    uint8_t i;
+    for (i=0;i<=7;i++){
+        led_off(i);
+    }
+}
+void all_led_on (void){
+    uint8_t i;
+    for (i=0;i<=7;i++){
+        led_on(i);
+    }
 }
 
 void led_on(int numeroLed){
