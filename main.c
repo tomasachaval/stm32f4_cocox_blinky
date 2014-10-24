@@ -17,14 +17,18 @@ void main() {
     {
         led_on(3);
         start();
-        write(0x0A);
+        write(0xF0);
         led_off(3);
         stop();
 //        write(EEPROM);
 //        uint8_t address= 0x00;
 //        uint8_t byte = 0x0F;
-//        uint8_t result=0;
-//        result=EEPROM_byte_write(address, byte);
+//        uint8_t dato=0;
+//        if(EEPROM_byte_write(address, byte))
+//            if(EEPROM_sequential_read(&dato, address,1))
+//                if(dato=byte)
+//                    led_on(5);
+
 //        if (0!=result){
 //            led_on(1);
 //            led_on(2);

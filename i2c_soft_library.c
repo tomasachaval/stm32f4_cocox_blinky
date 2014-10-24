@@ -7,16 +7,16 @@
 #include "bsp.h"
 
 //#define uchar unsigned char // 8bit
-#define SDA LATJ5//PORTJbits.RJ5 /* microcontroller's I/O lines */
-#define SCL LATJ6//PORTJbits.RJ6 /* assigned to I2C lines */
+#define SDA TRISJ5 //LATJ5//PORTJbits.RJ5 /* microcontroller's I/O lines */
+#define SCL TRISJ6 //LATJ6//PORTJbits.RJ6 /* assigned to I2C lines */
 #define wp 0x80  //haciendo or con este numero hago que trisj7=1---> que es una salida. ya que este sirve para manejar el write protect
 
 /****************************************************
 Issuing of START condition.
  ****************************************************/
 void start(void) {
-    TRISJ = 0x00;
-    LATJ7 = 0; // HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
+   // TRISJ = 0x00;
+  //  LATJ7 = 0; // HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
     SDA = SCL = 1;
     SDA = 0;
     __delay_us(5); /* it places NOP instruction */
@@ -28,8 +28,8 @@ void start(void) {
 Issuing of STOP condition.
  ****************************************************/
 void stop(void) {
-    TRISJ = 0x00;
-    LATJ7 = 0; //HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
+  //  TRISJ = 0x00;
+  //  LATJ7 = 0; //HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
     SDA = 0;
     SCL = 1;
     __delay_us(5);
@@ -42,8 +42,8 @@ or acknowledgment bit.
  ****************************************************/
 uint8_t clock(void) {
     uint8_t level; /* state of SDA line */
-    TRISJ = 0x32; //SCL o RJ6 = OUTPUT, SDA o RJ5= INPUT
-    LATJ7 = 0; //HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
+  //  TRISJ = 0x32; //SCL o RJ6 = OUTPUT, SDA o RJ5= INPUT
+  //  LATJ7 = 0; //HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
     SCL = 1;
     __delay_us(1); /* it places NOP instruction into executable code */
     while (!SCL); /* if a pulse was stretched */
@@ -62,10 +62,10 @@ bit first. The function returns acknowledgment bit.
 uint8_t write(uint8_t byte) {
     uint8_t mask = 0x80;
    // uint8_t  i=0, p=0;
-    TRISJ = 0x00;
-    LATJ7 = 0; ////HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
+  //  TRISJ = 0x00;
+ // LATJ7 = 0; ////HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
     while (mask) {
-        TRISJ = 0x00;
+ //       TRISJ = 0x00;
         if (byte & mask){
             SDA = 1;
         }else{
@@ -84,22 +84,23 @@ Reading byte from a slave, with most significant
 bit first. The parameter indicates, whether to
 acknowledge (1) or not (0).
  ****************************************************/
-uint8_t read(uint8_t acknowledgment) {
-    TRISJ = 0x60;
-    uint8_t mask = 0x80,
-            byte = 0x00;
+uint8_t read (uint8_t acknowledgment) {
+ //   TRISJ = 0x00;
+    uint8_t mask = 0x80;
+    uint8_t byte = 0x00;
     while (mask) {
         if (clock())
             byte |= mask;
         mask >>= 1; /* next bit to receive */
     }
     if (acknowledgment) {
-        TRISJ = 0x00;
+//        TRISJ = 0x00;
         SDA = 0;
         clock();
-        TRISJ = 0x00;
+ //       TRISJ = 0x00;
         SDA = 1;
     } else {
+ //       TRISJ = 0x00;
         SDA = 1;
         clock();
     }
@@ -112,6 +113,7 @@ uint8_t EEPROM_byte_write(uint8_t address, uint8_t byte) { //direccion dentro de
     LATJ7 = 0; // //HAGO WP =0 PARA PODER ESCRIBIR// LO HICE POR HARDWARE SACANDO R5 Y PONIIENDO CABLE A MASA
     uint8_t status=0; /* failure by default */
 //    status = 0;
+    led_on(3);
     start();
     if (!write(EEPROM)) { /* write operation    */
         if (!write(address)) { /* byte address       */
@@ -120,6 +122,7 @@ uint8_t EEPROM_byte_write(uint8_t address, uint8_t byte) { //direccion dentro de
             }
         }
     }
+    led_off(3);
     stop();
     return (status);
 }
@@ -135,8 +138,7 @@ uint8_t EEPROM_sequential_read(uint8_t *block, uint8_t address, uint8_t size) {/
         if (!write(address)) { /* initial address    */
             start();
             if (!write(EEPROM | 0x01)) { /* read operation     */
-                //TRISJ = 0x60;
-                TRISJ = 0x60;
+               // TRISJ = 0x60;
                 while (size--)
                     *block++ = read(size ? ACK : NO_ACK); // tomas no entiendo esta linea
                 status = 1; /* success            */

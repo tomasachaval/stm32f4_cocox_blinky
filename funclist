@@ -1,11 +1,11 @@
-_clock: CODE, 129860 0 42
-_stop: CODE, 129796 0 20
+_clock: CODE, 129876 0 36
+_stop: CODE, 129820 0 14
 _led_off: CODE, 130084 0 110
-_main: CODE, 129950 0 62
-_all_led_off: CODE, 129902 0 48
-__initialization: CODE, 129790 0 0
-_config: CODE, 129838 0 22
-_write: CODE, 130012 0 72
-_start: CODE, 129816 0 22
+_main: CODE, 130022 0 62
+_all_led_off: CODE, 129912 0 48
+__initialization: CODE, 129814 0 0
+_config: CODE, 129850 0 26
+_write: CODE, 129960 0 62
+_start: CODE, 129834 0 16
 _led_on: CODE, 130194 0 110
-Total: 508
+Total: 484
