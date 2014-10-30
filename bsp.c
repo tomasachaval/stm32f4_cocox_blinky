@@ -6,8 +6,7 @@ void config (void){
     TRISH=1;
     TRISF=1;
     TRISC=0; // PUERTO C ES OUTPUT
-    TRISJ7=0;
-    LATJ7=0;
+    TRISJ7=1;
 
 }
 

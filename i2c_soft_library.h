@@ -1,8 +1,9 @@
 #ifndef __i2c_h__
 #define __i2c_h__
 
-#define EEPROM 0b10100100      /* uso IC06. SU DIR ES 10 // slave address, 1010=control code, b0-->indica el bloque de 512k
+#define EEPROM 0XA4 /*A6=0b10100110       uso IC06. SU DIR ES 10 // slave address, 1010=control code, b0-->indica el bloque de 512k
 dentro de la memoria,A1y A0--> indican que memoria es. r/w-->data direction bit = 0 para hacerle el or. */
+#define RTC 1101000// a esta direccion le tengo que agregar el ultimo bit que es 1 para leer y queda D0
 #include <stdint.h>
 //#define uchar unsigned char
 
