@@ -134,6 +134,16 @@
 [v ___tmul `(um  1 e 3 0 ]
 "3 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\wmul.c
 [v ___wmul `(ui  1 e 2 0 ]
+"10 DS1307_library.c
+[v _Dec2Bcd `(uc  1 e 1 0 ]
+"14
+[v _Bcd2Dec `(uc  1 e 1 0 ]
+"17
+[v _ds1307_init `(v  1 e 0 0 ]
+"45
+[v _ds1307_set_date_time `(v  1 e 0 0 ]
+"66
+[v _ds1307_get_time_date `(v  1 e 0 0 ]
 "16 i2c_soft_library.c
 [v _start `(v  1 e 0 0 ]
 "28
@@ -191,7 +201,7 @@
 "13 main.c
 [v _main `(v  1 e 0 0 ]
 {
-"66
+"72
 } 0
 "3 bsp.c
 [v _config `(v  1 e 0 0 ]
@@ -205,7 +215,18 @@
 [v all_led_off@i `uc  1 a 1 5 ]
 "18
 } 0
-"58 i2c_soft_library.c
+"56
+[v _led_off `(v  1 e 0 0 ]
+{
+[v led_off@numeroLed `i  1 p 2 0 ]
+"87
+} 0
+"16 i2c_soft_library.c
+[v _start `(v  1 e 0 0 ]
+{
+"23
+} 0
+"58
 [v _write `(uc  1 e 1 0 ]
 {
 "59
@@ -220,13 +241,12 @@
 [v led_on@numeroLed `i  1 p 2 0 ]
 "55
 } 0
-"56
-[v _led_off `(v  1 e 0 0 ]
+"28 i2c_soft_library.c
+[v _stop `(v  1 e 0 0 ]
 {
-[v led_off@numeroLed `i  1 p 2 0 ]
-"87
+"34
 } 0
-"40 i2c_soft_library.c
+"40
 [v _clock `(uc  1 e 1 0 ]
 {
 "41
